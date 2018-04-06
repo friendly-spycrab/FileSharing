@@ -1,4 +1,4 @@
-﻿using FileSharing.File.IO;
+﻿using FileSharing.FileIO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

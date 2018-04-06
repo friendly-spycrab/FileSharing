@@ -1,7 +1,8 @@
 ﻿using FileSharing;
-using FileSharing.File.IO;
+using FileSharing.FileIO;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,12 +20,11 @@ namespace Uploader
 
             try
             {
-
-                foreach (var item in provider.Upload(FileSplitter.SplitFileBytes(path,provider.MaxChunkSize),1000))
-                {
-                    Console.WriteLine(item);
-                }
-
+                FileSplitter.SplitFile(path, 1024*1024*50, new DirectoryInfo("Parts"), isPathAbsoloute: true).ToList();
+                //foreach (var item in provider.Upload(FileSplitter.SplitFile(path, provider.MaxChunkSize, new DirectoryInfo("Parts"), isPathAbsoloute: true), 1000))
+                //{
+                //    Console.WriteLine(item);
+                //}
             }
             catch (UploadFailedException ex)
             {
@@ -37,7 +37,8 @@ namespace Uploader
 
             }
 
-            Console.ReadLine();
+            Console.WriteLine("Done");
+            //Console.ReadLine();
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileSharing.File.IO
+namespace FileSharing.FileIO
 {
     /// <summary>
     /// Provider for downloading Files from File.IO
@@ -43,6 +43,11 @@ namespace FileSharing.File.IO
                     yield return client.DownloadData(FileIOJson.FromJson(item).Link);
                 }
             }
+        }
+
+        public override IEnumerable<string> Download(IEnumerable<string> downloadLinks, string filePath)
+        {
+            throw new NotImplementedException();
         }
     }
 }

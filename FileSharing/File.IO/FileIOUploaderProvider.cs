@@ -6,29 +6,27 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FileSharing.File.IO
+namespace FileSharing.FileIO
 {
     /// <summary>
-    /// Provides methods for uploading to File.io
+    /// Provides methods for uploading to FileIO
     /// </summary>
     /// <remarks>
-    /// File.IO deletes files after 2 weeks in default.
-    /// File.IO links can only be used once after that the files is deleted
+    /// FileIO deletes files after 2 weeks in default.
+    /// FileIO links can only be used once after that the files is deleted
     /// </remarks>
     public class FileIOUploaderProvider : AbstractUploaderProvider
     {
         /// <summary>
-        /// The max size of an upload for File.IO. Currently 1GB or 1024 * 1024 * 1024
+        /// The max size of an upload for FileIO. Currently 5GB or 1024 * 1024 * 1024 * 5
         /// </summary>
         /// <remarks>
-        /// Even though the actual max file size of a File.IO upload is 5GB. because of the fact that C# streams only takes an integer for offsets and lengths.
-        /// Todo: Implement support for larger than 1GB chunks
-        /// Todo: Implement support for larger than 1GB files
+        /// Even though the actual max file size of a FileIO upload is 5GB. because of the fact that C# streams only takes an integer for offsets and lengths.
         /// </remarks>
-        public override int MaxChunkSize { get; protected set; } = 1024 * 1024 * 1024;
+        public override long MaxChunkSize { get; protected set; } = (long)(1024 * 1024 * 1024) * 5;
 
         /// <summary>
-        /// Uploads a the bytes to File.IO and gives links back for the file
+        /// Uploads a the bytes to FileIO and gives links back for the file
         /// </summary>
         /// <param name="inputs">Uploads all arrays and returns an enumerable with all the download links</param>
         /// <param name="sleepTimeBetweenDownloadsMS">
@@ -66,7 +64,7 @@ namespace FileSharing.File.IO
             foreach (var item in inputs)
             {
 
-                var client = new RestClient("https://file.io");
+                var client = new RestClient("https://File.IO");
                 var request = new RestRequest(Method.POST);
 
                 request.AddFile("file", item, $"Part{index}.bin");
@@ -82,7 +80,7 @@ namespace FileSharing.File.IO
                     List<byte[]> inputsList = inputs.ToList();
                     throw new UploadFailedException($"Raw Response: {response.Content}", index, inputsList.GetRange(index, inputsList.Count - index), successfulDownloads);
                 }
-                
+
 
                 Thread.Sleep(sleepTimeBetweenDownloadsMS);
 
@@ -96,7 +94,39 @@ namespace FileSharing.File.IO
 
         public override IEnumerable<string> Upload(IEnumerable<string> Files, int sleepTimeBetweenDownloadsMS = 1000)
         {
-            throw new NotImplementedException();
+            //Keep a list of successful download. So if an upload fails the UploadFailedException can give an enumerable that contains the successful uploads.
+            List<string> successfulDownloads = new List<string>();
+            int index = 0;
+
+            foreach (var item in Files)
+            {
+
+                var client = new RestClient("https://File.IO");
+                var request = new RestRequest(Method.POST);
+
+                request.AddFile("file", item);
+
+                index++;
+
+                IRestResponse response = client.Execute(request);
+
+                FileIOJson responseData = FileIOJson.FromJson(response.Content);
+
+                //if (!responseData.Success)
+                //{
+                //    List<string> inputsList = inputs.ToList();
+                //    throw new UploadFailedException($"Raw Response: {response.Content}", index, inputsList.GetRange(index, inputsList.Count - index), successfulDownloads);
+                //}
+
+
+                Thread.Sleep(sleepTimeBetweenDownloadsMS);
+
+                successfulDownloads.Add(response.Content);
+                yield return response.Content;
+
+            }
+
+            successfulDownloads.Clear();
         }
     }
 }

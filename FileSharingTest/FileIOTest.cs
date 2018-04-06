@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using FileSharing;
-using FileSharing.File.IO;
+using FileSharing.FileIO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FileSharingTest
@@ -17,7 +17,7 @@ namespace FileSharingTest
         {
             FileIOUploaderProvider uploaderProvider = new FileIOUploaderProvider();
 
-            var links = uploaderProvider.Upload(FileSplitter.SplitFileBytes("test.jpg", 51200)).ToList();
+            var links = uploaderProvider.Upload(FileSplitter.SplitFile("test.jpg", 51200)).ToList();
 
 
             byte[] oldFile = File.ReadAllBytes("test.jpg");
@@ -42,6 +42,6 @@ namespace FileSharingTest
         }
 
         [TestMethod]
-        public void UploadDownloadTestException() => Assert.ThrowsException<UploadFailedException>(() => new FileIOUploaderProvider().Upload(FileSplitter.SplitFileBytes("test.jpg", 1024 * 5),5).ToList());
+        public void UploadDownloadTestException() => Assert.ThrowsException<UploadFailedException>(() => new FileIOUploaderProvider().Upload(FileSplitter.SplitFile("test.jpg", 1024 * 5),5).ToList());
     }
 }

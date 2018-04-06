@@ -9,5 +9,7 @@ namespace FileSharing
     public abstract class AbstractDownloaderProvider
     {
         public abstract IEnumerable<byte[]> Download(IEnumerable<string> downloadLinks);
+
+        public abstract IEnumerable<string> Download(IEnumerable<string> downloadLinks,string filePath);
     }
 }

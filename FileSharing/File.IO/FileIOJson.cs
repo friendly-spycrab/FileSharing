@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileSharing.File.IO
+namespace FileSharing.FileIO
 {
     /// <summary>
     /// Container class for storing 

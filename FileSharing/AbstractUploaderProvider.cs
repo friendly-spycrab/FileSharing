@@ -9,14 +9,15 @@ namespace FileSharing
 {
     public abstract class AbstractUploaderProvider
     {
-        public abstract int MaxChunkSize { get; protected set; }
+        public abstract long MaxChunkSize { get; protected set; }
+
 
         /// <summary>
         /// Uploads the byte arrays to the website
         /// </summary>
         /// <param name="inputs">Should probably a Lazy loaded array</param>
         /// <param name="sleepTimeBetweenDownloadsMS">The amount of time the method should sleep the thread after each download in milliseconds. Default 1000Ms</param>
-        /// <seealso cref="FileSplitter.SplitFileBytes(string, int)"/>
+        /// <seealso cref="FileSplitter.SplitFile(string, int)"/>
         /// <returns></returns>
         public abstract IEnumerable<string> Upload(IEnumerable<byte[]> inputs,int sleepTimeBetweenDownloadsMS = 1000);
 
