@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['download',['Download',['../class_file_sharing_1_1_abstract_downloader_provider.html#a38b11b25b2acda450d8406ca488585dd',1,'FileSharing.AbstractDownloaderProvider.Download(IEnumerable&lt; string &gt; downloadLinks)'],['../class_file_sharing_1_1_abstract_downloader_provider.html#ada4a19b16867bad02c79f09072f69b84',1,'FileSharing.AbstractDownloaderProvider.Download(IEnumerable&lt; string &gt; downloadLinks, string filePath)'],['../class_file_sharing_1_1_file_i_o_1_1_file_i_o_download_provider.html#a0ff0bb3a458f9caa2daa5dc035b07c11',1,'FileSharing.FileIO.FileIODownloadProvider.Download(IEnumerable&lt; string &gt; downloadLinks)'],['../class_file_sharing_1_1_file_i_o_1_1_file_i_o_download_provider.html#a8852368c5ed43e3f30def0df9f11841c',1,'FileSharing.FileIO.FileIODownloadProvider.Download(IEnumerable&lt; string &gt; downloadLinks, string filePath)']]]
+];
