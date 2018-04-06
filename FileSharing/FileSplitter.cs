@@ -61,17 +61,34 @@ namespace FileSharing
         /// </remarks>
         /// <param name="filePath">The path to the file.</param>
         /// <param name="chunkSize">the size of the chunks to split the files into</param>
-        /// <param name="splitFilesDirectory">the folder where to store the files. if the folder does not exist, then it will created. Default is the working directory</param>
+        /// <param name="splitFilesDirectory">the folder where to store the files. if the folder does not exist, then it will created. Default is the current directory</param>
         /// <param name="splitFilesName">the name of the splitfiles. For example if splitFilesName = "Part" then the files will be named "Part1.split","Part2.split" and so on</param>
-        /// <returns>An enumerable of all the absoloute paths to the split files</returns>
-        /// 
-        public static IEnumerable<string> SplitFile(string filePath, int chunkSize,DirectoryInfo splitFilesDirectory = null,string splitFilesName = "Part")
+        /// <param name="isPathAbsoloute">Whether the returned paths to the files are absoloute</param>
+        /// <returns>An enumerable of all the paths to the split files.</returns>
+        /// <example>
+        /// This example shows how to use this method
+        /// <code>
+        /// //Splits the test.jpg into 50kb chunks and outputs them into the current directory
+        /// var files = SplitFile("Test.jpg", 1024 * 50);
+        /// foreach (var item in files)
+        /// {
+        ///     Console.WriteLine(item);
+        ///     /* Prints
+        ///      * Path
+        ///      * Part1.split
+        ///      * Part2.split
+        ///      * Part3.split
+        ///      * And so on
+        ///      */
+        /// }
+        /// </code>
+        /// </example>
+        public static IEnumerable<string> SplitFile(string filePath, long chunkSize, DirectoryInfo splitFilesDirectory = null, string splitFilesName = "Part", bool isPathAbsoloute = false)
         {
             if (splitFilesDirectory == null)
                 splitFilesDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
 
             Directory.CreateDirectory(splitFilesDirectory.FullName);
-
 
         }
     }

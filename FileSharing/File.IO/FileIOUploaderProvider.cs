@@ -47,7 +47,7 @@ namespace FileSharing.File.IO
         /// FileIOUploaderProvider uploaderProvider = new FileIOUploaderProvider();
         /// 
         /// //Upload the test.jpg after splitting it up in 50kb chunks
-        /// var links = uploaderProvider.Upload(FileSplitter.GetSplitFileLazy("test.jpg", 51200)).ToList();
+        /// var links = uploaderProvider.Upload(FileSplitter.SplitFileBytes("test.jpg", 51200)).ToList();
         /// 
         /// //download the test.jpg
         /// var splitfile = new FileIODownloadProvider().Download(links);
@@ -92,6 +92,11 @@ namespace FileSharing.File.IO
             }
 
             successfulDownloads.Clear();
+        }
+
+        public override IEnumerable<string> Upload(IEnumerable<string> Files, int sleepTimeBetweenDownloadsMS = 1000)
+        {
+            throw new NotImplementedException();
         }
     }
 }
