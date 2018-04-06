@@ -140,6 +140,8 @@ Properties</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This exception is thrown when an upload fails. </p>
+
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00013">13</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a695f2b76a11171b4ac7b749eeeb8f09b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a695f2b76a11171b4ac7b749eeeb8f09b">&#9670;&nbsp;</a></span>UploadFailedException() <span class="overload">[1/7]</span></h2>
@@ -155,6 +157,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00081">81</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
 
 </div>
 </div>
@@ -190,6 +194,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00086">86</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
+
+<p class="reference">References <a class="el" href="_upload_failed_exception_8cs_source.html#l00044">FileSharing.UploadFailedException.IndexOfFailure</a>, <a class="el" href="_upload_failed_exception_8cs_source.html#l00079">FileSharing.UploadFailedException.SuccessfulDownloads</a>, and <a class="el" href="_upload_failed_exception_8cs_source.html#l00074">FileSharing.UploadFailedException.UnsuccessfulUploads</a>.</p>
+
 </div>
 </div>
 <a id="a9100bff30f30fc075d688f652b69c70e"></a>
@@ -207,6 +215,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00093">93</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
 
 </div>
 </div>
@@ -248,6 +258,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00098">98</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
+
+<p class="reference">References <a class="el" href="_upload_failed_exception_8cs_source.html#l00044">FileSharing.UploadFailedException.IndexOfFailure</a>, <a class="el" href="_upload_failed_exception_8cs_source.html#l00079">FileSharing.UploadFailedException.SuccessfulDownloads</a>, and <a class="el" href="_upload_failed_exception_8cs_source.html#l00074">FileSharing.UploadFailedException.UnsuccessfulUploads</a>.</p>
+
 </div>
 </div>
 <a id="ad121124c4e8c37f2b1f686715e903450"></a>
@@ -275,6 +289,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00105">105</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
 
 </div>
 </div>
@@ -322,6 +338,10 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00110">110</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
+
+<p class="reference">References <a class="el" href="_upload_failed_exception_8cs_source.html#l00044">FileSharing.UploadFailedException.IndexOfFailure</a>, <a class="el" href="_upload_failed_exception_8cs_source.html#l00079">FileSharing.UploadFailedException.SuccessfulDownloads</a>, and <a class="el" href="_upload_failed_exception_8cs_source.html#l00074">FileSharing.UploadFailedException.UnsuccessfulUploads</a>.</p>
+
 </div>
 </div>
 <a id="af7a1ae41c23fd2ed6d955000f452ecdd"></a>
@@ -358,6 +378,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00118">118</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -383,6 +405,8 @@ Properties</h2></td></tr>
 
 <p>The index in the enumerable where the upload failure happened </p>
 <div class="fragment"><div class="line">FileIOUploaderProvider uploaderProvider = <span class="keyword">new</span> FileIOUploaderProvider();</div><div class="line"><span class="keywordflow">try</span></div><div class="line">{</div><div class="line">    <span class="comment">//Here we try to upload to File.IO</span></div><div class="line">    uploaderProvider.Upload(<span class="keyword">new</span> Byte[][]</div><div class="line">                            {</div><div class="line">                            <span class="keyword">new</span> byte[] {1,1}, <span class="comment">//Index 0</span></div><div class="line">                            <span class="keyword">new</span> byte[] {2,2}, <span class="comment">//Index 1</span></div><div class="line">                            <span class="keyword">new</span> byte[] {3,3}, <span class="comment">//Index 2</span></div><div class="line">                            <span class="keyword">new</span> byte[] {4,4}, <span class="comment">//Index 3</span></div><div class="line">                            <span class="keyword">new</span> byte[] {5,5}  <span class="comment">//Index 4</span></div><div class="line">                            });</div><div class="line"></div><div class="line">    <span class="comment">//But it fails at new byte[] {3,3},</span></div><div class="line">}</div><div class="line"><span class="keywordflow">catch</span> (<a class="code" href="class_file_sharing_1_1_upload_failed_exception.html#a695f2b76a11171b4ac7b749eeeb8f09b">UploadFailedException</a> ex)</div><div class="line">{</div><div class="line">    <span class="comment">//This means UnsuccessfulUploads value will be </span></div><div class="line">    <span class="comment">//2</span></div><div class="line">    var indexFailure = ex.IndexOfFailure);</div><div class="line">}        </div></div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00044">44</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
+
 </div>
 </div>
 <a id="a95a4b29d6b42b184e5c66659e3873e71"></a>
@@ -406,6 +430,8 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The downloads that were successful </p>
+
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00079">79</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
 
 </div>
 </div>
@@ -431,10 +457,12 @@ Properties</h2></td></tr>
 
 <p>The uploads that did not succeed. This includes the item where the exception failed </p>
 <div class="fragment"><div class="line">FileIOUploaderProvider uploaderProvider = <span class="keyword">new</span> FileIOUploaderProvider();</div><div class="line"><span class="keywordflow">try</span></div><div class="line">{</div><div class="line">    <span class="comment">//Here we try to upload to File.IO</span></div><div class="line">    uploaderProvider.Upload(<span class="keyword">new</span> Byte[][]</div><div class="line">                            {</div><div class="line">                            <span class="keyword">new</span> byte[] {1,1},</div><div class="line">                            <span class="keyword">new</span> byte[] {2,2},</div><div class="line">                            <span class="keyword">new</span> byte[] {3,3},</div><div class="line">                            <span class="keyword">new</span> byte[] {4,4},</div><div class="line">                            <span class="keyword">new</span> byte[] {5,5}</div><div class="line">                            });</div><div class="line"></div><div class="line">    <span class="comment">//But it fails at new byte[] {3,3},</span></div><div class="line">}</div><div class="line"><span class="keywordflow">catch</span> (<a class="code" href="class_file_sharing_1_1_upload_failed_exception.html#a695f2b76a11171b4ac7b749eeeb8f09b">UploadFailedException</a> ex)</div><div class="line">{</div><div class="line">    <span class="comment">//This means UnsuccessfulUploads value will be </span></div><div class="line">    <span class="comment">//{3,3},{4,4},{5,5}</span></div><div class="line">    var faileduploads = ex.UnsuccessfulUploads);</div><div class="line">}        </div></div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="_upload_failed_exception_8cs_source.html#l00074">74</a> of file <a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_upload_failed_exception_8cs.html">UploadFailedException.cs</a></li>
+<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_upload_failed_exception_8cs_source.html">UploadFailedException.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

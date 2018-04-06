@@ -98,7 +98,7 @@ Inheritance diagram for FileSharing.AbstractDownloaderProvider:</div>
  <div class="center">
   <img src="class_file_sharing_1_1_abstract_downloader_provider.png" usemap="#FileSharing.AbstractDownloaderProvider_map" alt=""/>
   <map id="FileSharing.AbstractDownloaderProvider_map" name="FileSharing.AbstractDownloaderProvider_map">
-<area href="class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider.html" title="Provider for downloading Files from File.IO " alt="FileSharing.File.IO.FileIODownloadProvider" shape="rect" coords="0,56,262,80"/>
+<area href="class_file_sharing_1_1_file_i_o_1_1_file_i_o_download_provider.html" title="Provider for downloading Files from File.IO " alt="FileSharing.FileIO.FileIODownloadProvider" shape="rect" coords="0,56,258,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -106,10 +106,15 @@ Inheritance diagram for FileSharing.AbstractDownloaderProvider:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a38b11b25b2acda450d8406ca488585dd"><td class="memItemLeft" align="right" valign="top">abstract IEnumerable&lt; byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_abstract_downloader_provider.html#a38b11b25b2acda450d8406ca488585dd">Download</a> (IEnumerable&lt; string &gt; downloadLinks)</td></tr>
 <tr class="separator:a38b11b25b2acda450d8406ca488585dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada4a19b16867bad02c79f09072f69b84"><td class="memItemLeft" align="right" valign="top">abstract IEnumerable&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_abstract_downloader_provider.html#ada4a19b16867bad02c79f09072f69b84">Download</a> (IEnumerable&lt; string &gt; downloadLinks, string filePath)</td></tr>
+<tr class="separator:ada4a19b16867bad02c79f09072f69b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_abstract_downloader_provider_8cs_source.html#l00009">9</a> of file <a class="el" href="_abstract_downloader_provider_8cs_source.html">AbstractDownloaderProvider.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a38b11b25b2acda450d8406ca488585dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38b11b25b2acda450d8406ca488585dd">&#9670;&nbsp;</a></span>Download()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b11b25b2acda450d8406ca488585dd">&#9670;&nbsp;</a></span>Download() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,12 +137,50 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider.html#a20619028413c369ac0cc064b610d5c0e">FileSharing.File.IO.FileIODownloadProvider</a>.</p>
+<p>Implemented in <a class="el" href="class_file_sharing_1_1_file_i_o_1_1_file_i_o_download_provider.html#a0ff0bb3a458f9caa2daa5dc035b07c11">FileSharing.FileIO.FileIODownloadProvider</a>.</p>
+
+</div>
+</div>
+<a id="ada4a19b16867bad02c79f09072f69b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada4a19b16867bad02c79f09072f69b84">&#9670;&nbsp;</a></span>Download() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract IEnumerable&lt;string&gt; FileSharing.AbstractDownloaderProvider.Download </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>downloadLinks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filePath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_file_sharing_1_1_file_i_o_1_1_file_i_o_download_provider.html#a8852368c5ed43e3f30def0df9f11841c">FileSharing.FileIO.FileIODownloadProvider</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_abstract_downloader_provider_8cs.html">AbstractDownloaderProvider.cs</a></li>
+<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_abstract_downloader_provider_8cs_source.html">AbstractDownloaderProvider.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -16,7 +16,7 @@ namespace FileSharing
         /// <param name="chunkSize">the size of a chunk in bytes</param>
         /// <remarks>
         /// This method stores the entire split file in memory.
-        /// Use <see cref="SplitFile(string, int)"/> if you want to work on files bigger than 2GB on 32bit systems.
+        /// Use <see cref="SplitFile(string, long, DirectoryInfo, string, bool)"/> if you want to work on files bigger than 2GB on 32bit systems.
         /// </remarks>
         /// <returns></returns>
         /// <exception cref="OutOfMemoryException">If the file is over whats allowed by the max</exception>
@@ -71,16 +71,15 @@ namespace FileSharing
         /// //Splits the test.jpg into 50kb chunks and outputs them into the current directory
         /// var files = SplitFile("Test.jpg", 1024 * 50);
         /// foreach (var item in files)
-        /// {
         ///     Console.WriteLine(item);
-        ///     /* Prints
-        ///      * Path
-        ///      * Part1.split
-        ///      * Part2.split
-        ///      * Part3.split
-        ///      * And so on
-        ///      */
-        /// }
+        /// /* Prints
+        ///  * Path
+        ///  * Part1.split
+        ///  * Part2.split
+        ///  * Part3.split
+        ///  * And so on
+        ///  */
+        ///      
         /// </code>
         /// </example>
         public static IEnumerable<string> SplitFile(string filePath, long chunkSize, DirectoryInfo splitFilesDirectory = null, string splitFilesName = "Part", bool isPathAbsoloute = false)

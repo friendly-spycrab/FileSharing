@@ -99,7 +99,7 @@ Inheritance diagram for FileSharing.AbstractUploaderProvider:</div>
  <div class="center">
   <img src="class_file_sharing_1_1_abstract_uploader_provider.png" usemap="#FileSharing.AbstractUploaderProvider_map" alt=""/>
   <map id="FileSharing.AbstractUploaderProvider_map" name="FileSharing.AbstractUploaderProvider_map">
-<area href="class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider.html" title="Provides methods for uploading to File.io " alt="FileSharing.File.IO.FileIOUploaderProvider" shape="rect" coords="0,56,257,80"/>
+<area href="class_file_sharing_1_1_file_i_o_1_1_file_i_o_uploader_provider.html" title="Provides methods for uploading to FileIO " alt="FileSharing.FileIO.FileIOUploaderProvider" shape="rect" coords="0,56,253,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -108,15 +108,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a951930bd16d0cfd061fa2dfd055e2601"><td class="memItemLeft" align="right" valign="top">abstract IEnumerable&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_abstract_uploader_provider.html#a951930bd16d0cfd061fa2dfd055e2601">Upload</a> (IEnumerable&lt; byte[]&gt; inputs, int sleepTimeBetweenDownloadsMS=1000)</td></tr>
 <tr class="memdesc:a951930bd16d0cfd061fa2dfd055e2601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads the byte arrays to the website  <a href="#a951930bd16d0cfd061fa2dfd055e2601">More...</a><br /></td></tr>
 <tr class="separator:a951930bd16d0cfd061fa2dfd055e2601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f85a810557b4bd71443eb2008547647"><td class="memItemLeft" align="right" valign="top">abstract IEnumerable&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_abstract_uploader_provider.html#a7f85a810557b4bd71443eb2008547647">Upload</a> (IEnumerable&lt; string &gt; Files, int sleepTimeBetweenDownloadsMS=1000)</td></tr>
+<tr class="memdesc:a7f85a810557b4bd71443eb2008547647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uploads the files inputted to files enumerable  <a href="#a7f85a810557b4bd71443eb2008547647">More...</a><br /></td></tr>
+<tr class="separator:a7f85a810557b4bd71443eb2008547647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a5a62c7ab639093a3c4d7ea80c5b8a826"><td class="memItemLeft" align="right" valign="top">abstract int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_abstract_uploader_provider.html#a5a62c7ab639093a3c4d7ea80c5b8a826">MaxChunkSize</a><code> [get, protected set]</code></td></tr>
-<tr class="separator:a5a62c7ab639093a3c4d7ea80c5b8a826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb54ae14105fa9e2d8e68ae474bd74cf"><td class="memItemLeft" align="right" valign="top">abstract long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_abstract_uploader_provider.html#abb54ae14105fa9e2d8e68ae474bd74cf">MaxChunkSize</a><code> [get, protected set]</code></td></tr>
+<tr class="separator:abb54ae14105fa9e2d8e68ae474bd74cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_abstract_uploader_provider_8cs_source.html#l00010">10</a> of file <a class="el" href="_abstract_uploader_provider_8cs_source.html">AbstractUploaderProvider.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a951930bd16d0cfd061fa2dfd055e2601"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a951930bd16d0cfd061fa2dfd055e2601">&#9670;&nbsp;</a></span>Upload()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a951930bd16d0cfd061fa2dfd055e2601">&#9670;&nbsp;</a></span>Upload() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,15 +163,15 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_file_sharing_1_1_file_splitter.html#a25696a2fad3740fa24f79fd194da6ec3" title="Splits the file lazily and returns an enumerable that contains the file split into byte arrays ...">FileSplitter.SplitFile(string, int)</a></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Implemented in <a class="el" href="class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider.html#a991a7eebd1a55bc38e0b760a0f824928">FileSharing.File.IO.FileIOUploaderProvider</a>.</p>
+<p>Implemented in <a class="el" href="class_file_sharing_1_1_file_i_o_1_1_file_i_o_uploader_provider.html#adf0c3382f1c092923de4b2ee6a039923">FileSharing.FileIO.FileIOUploaderProvider</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Property Documentation</h2>
-<a id="a5a62c7ab639093a3c4d7ea80c5b8a826"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a62c7ab639093a3c4d7ea80c5b8a826">&#9670;&nbsp;</a></span>MaxChunkSize</h2>
+<a id="a7f85a810557b4bd71443eb2008547647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f85a810557b4bd71443eb2008547647">&#9670;&nbsp;</a></span>Upload() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +180,57 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">abstract int FileSharing.AbstractUploaderProvider.MaxChunkSize</td>
+          <td class="memname">abstract IEnumerable&lt;string&gt; FileSharing.AbstractUploaderProvider.Upload </td>
+          <td>(</td>
+          <td class="paramtype">IEnumerable&lt; string &gt;&#160;</td>
+          <td class="paramname"><em>Files</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sleepTimeBetweenDownloadsMS</em> = <code>1000</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Uploads the files inputted to files enumerable </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Files</td><td>an enumerable to all the paths for the files</td></tr>
+    <tr><td class="paramname">sleepTimeBetweenDownloadsMS</td><td>The amount of time the method should sleep the thread after each download in milliseconds. Default 1000Ms</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_file_sharing_1_1_file_splitter.html#a25696a2fad3740fa24f79fd194da6ec3" title="Splits the file lazily and returns an enumerable that contains the file split into byte arrays ...">FileSplitter.SplitFile</a></dd></dl>
+
+<p>Implemented in <a class="el" href="class_file_sharing_1_1_file_i_o_1_1_file_i_o_uploader_provider.html#ab60ebd0e31c88f5d365249d59f81e9fd">FileSharing.FileIO.FileIOUploaderProvider</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="abb54ae14105fa9e2d8e68ae474bd74cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb54ae14105fa9e2d8e68ae474bd74cf">&#9670;&nbsp;</a></span>MaxChunkSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">abstract long FileSharing.AbstractUploaderProvider.MaxChunkSize</td>
         </tr>
       </table>
   </td>
@@ -184,10 +240,12 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_abstract_uploader_provider_8cs_source.html#l00012">12</a> of file <a class="el" href="_abstract_uploader_provider_8cs_source.html">AbstractUploaderProvider.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_abstract_uploader_provider_8cs.html">AbstractUploaderProvider.cs</a></li>
+<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_abstract_uploader_provider_8cs_source.html">AbstractUploaderProvider.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

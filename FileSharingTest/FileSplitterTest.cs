@@ -12,7 +12,7 @@ namespace FileSharingTest
     public class FileSplitterTest
     {
         [TestMethod]
-        public void TestSplitFileBytes()
+        public void TestSplitFile()
         {
 
             IEnumerable<byte[]> newSplitFile = FileSplitter.SplitFile("test.jpg", 1024);

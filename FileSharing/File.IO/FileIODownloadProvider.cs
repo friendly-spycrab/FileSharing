@@ -22,7 +22,7 @@ namespace FileSharing.FileIO
         /// FileIOUploaderProvider uploaderProvider = new FileIOUploaderProvider();
         /// 
         /// //Upload the test.jpg after splitting it up in 50kb chunks
-        /// var links = uploaderProvider.Upload(FileSplitter.SplitFileBytes("test.jpg", 51200)).ToList();
+        /// var links = uploaderProvider.Upload(FileSplitter.SplitFile("test.jpg", 51200)).ToList();
         /// 
         /// //download the test.jpg
         /// var splitfile = new FileIODownloadProvider().Download(links);

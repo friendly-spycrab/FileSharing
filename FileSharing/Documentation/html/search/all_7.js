@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['link',['Link',['../class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_json.html#a8374b013799f1abfc26b35d88f4575ab',1,'FileSharing::File::IO::FileIOJson']]]
+  ['maxchunksize',['MaxChunkSize',['../class_file_sharing_1_1_abstract_uploader_provider.html#abb54ae14105fa9e2d8e68ae474bd74cf',1,'FileSharing.AbstractUploaderProvider.MaxChunkSize()'],['../class_file_sharing_1_1_file_i_o_1_1_file_i_o_uploader_provider.html#a71681d081bcdb7e871b4866c6a5c0c97',1,'FileSharing.FileIO.FileIOUploaderProvider.MaxChunkSize()']]]
 ];

@@ -95,13 +95,19 @@ $(document).ready(function(){initNavTree('class_file_sharing_1_1_file_splitter.h
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abc052a1ac224ba327a6380ee0d108f98"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_file_splitter.html#abc052a1ac224ba327a6380ee0d108f98">GetSplitFileLazy</a> (string filePath, int chunkSize)</td></tr>
-<tr class="memdesc:abc052a1ac224ba327a6380ee0d108f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the file lazily and returns an enumerable that contains the file split into byte arrays  <a href="#abc052a1ac224ba327a6380ee0d108f98">More...</a><br /></td></tr>
-<tr class="separator:abc052a1ac224ba327a6380ee0d108f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25696a2fad3740fa24f79fd194da6ec3"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_file_splitter.html#a25696a2fad3740fa24f79fd194da6ec3">SplitFile</a> (string filePath, int chunkSize)</td></tr>
+<tr class="memdesc:a25696a2fad3740fa24f79fd194da6ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the file lazily and returns an enumerable that contains the file split into byte arrays  <a href="#a25696a2fad3740fa24f79fd194da6ec3">More...</a><br /></td></tr>
+<tr class="separator:a25696a2fad3740fa24f79fd194da6ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f7dc920db0a5bd0f7ae992298d1198"><td class="memItemLeft" align="right" valign="top">static IEnumerable&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_sharing_1_1_file_splitter.html#aa0f7dc920db0a5bd0f7ae992298d1198">SplitFile</a> (string filePath, long chunkSize, DirectoryInfo splitFilesDirectory=null, string splitFilesName=&quot;Part&quot;, bool isPathAbsoloute=false)</td></tr>
+<tr class="memdesc:aa0f7dc920db0a5bd0f7ae992298d1198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits the file lazily into multiple subfiles.  <a href="#aa0f7dc920db0a5bd0f7ae992298d1198">More...</a><br /></td></tr>
+<tr class="separator:aa0f7dc920db0a5bd0f7ae992298d1198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="abc052a1ac224ba327a6380ee0d108f98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc052a1ac224ba327a6380ee0d108f98">&#9670;&nbsp;</a></span>GetSplitFileLazy()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_file_splitter_8cs_source.html#l00010">10</a> of file <a class="el" href="_file_splitter_8cs_source.html">FileSplitter.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a25696a2fad3740fa24f79fd194da6ec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25696a2fad3740fa24f79fd194da6ec3">&#9670;&nbsp;</a></span>SplitFile() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -110,7 +116,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static IEnumerable&lt;byte[]&gt; FileSharing.FileSplitter.GetSplitFileLazy </td>
+          <td class="memname">static IEnumerable&lt;byte[]&gt; FileSharing.FileSplitter.SplitFile </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>filePath</em>, </td>
@@ -142,12 +148,91 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>implement support for larger than 2GB files. </dd></dl>
+<p>This method stores the entire split file in memory. Use <a class="el" href="class_file_sharing_1_1_file_splitter.html#aa0f7dc920db0a5bd0f7ae992298d1198" title="Splits the file lazily into multiple subfiles. ">SplitFile(string, long, DirectoryInfo, string, bool)</a> if you want to work on files bigger than 2GB on 32bit systems. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">OutOfMemoryException</td><td>If the file is over whats allowed by the max</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_file_splitter_8cs_source.html#l00023">23</a> of file <a class="el" href="_file_splitter_8cs_source.html">FileSplitter.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa0f7dc920db0a5bd0f7ae992298d1198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f7dc920db0a5bd0f7ae992298d1198">&#9670;&nbsp;</a></span>SplitFile() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static IEnumerable&lt;string&gt; FileSharing.FileSplitter.SplitFile </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>filePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>chunkSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DirectoryInfo&#160;</td>
+          <td class="paramname"><em>splitFilesDirectory</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>splitFilesName</em> = <code>&quot;Part&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isPathAbsoloute</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Splits the file lazily into multiple subfiles. </p>
+<p>This requires that you have permission to write on the system. If you only need the bytes and your file is smaller than whats allowed by the clr use <a class="el" href="class_file_sharing_1_1_file_splitter.html#a25696a2fad3740fa24f79fd194da6ec3" title="Splits the file lazily and returns an enumerable that contains the file split into byte arrays ...">SplitFile(string, int)</a> instead </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The path to the file.</td></tr>
+    <tr><td class="paramname">chunkSize</td><td>the size of the chunks to split the files into</td></tr>
+    <tr><td class="paramname">splitFilesDirectory</td><td>the folder where to store the files. if the folder does not exist, then it will created. Default is the current directory</td></tr>
+    <tr><td class="paramname">splitFilesName</td><td>the name of the splitfiles. For example if splitFilesName = "Part" then the files will be named "Part1.split","Part2.split" and so on</td></tr>
+    <tr><td class="paramname">isPathAbsoloute</td><td>Whether the returned paths to the files are absoloute or relative to the splitFilesDirectory</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An enumerable of all the paths to the split files.</dd></dl>
+<p>This example shows how to use this method </p><div class="fragment"><div class="line"><span class="comment">//Splits the test.jpg into 50kb chunks and outputs them into the current directory</span></div><div class="line">var files = <a class="code" href="class_file_sharing_1_1_file_splitter.html#a25696a2fad3740fa24f79fd194da6ec3">SplitFile</a>(<span class="stringliteral">&quot;Test.jpg&quot;</span>, 1024 * 50);</div><div class="line"><span class="keywordflow">foreach</span> (var item <span class="keywordflow">in</span> files)</div><div class="line">    Console.WriteLine(item);</div><div class="line"><span class="comment">/* Prints</span></div><div class="line"><span class="comment"> * Path</span></div><div class="line"><span class="comment"> * Part1.split</span></div><div class="line"><span class="comment"> * Part2.split</span></div><div class="line"><span class="comment"> * Part3.split</span></div><div class="line"><span class="comment"> * And so on</span></div><div class="line"><span class="comment"> */</span></div></div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="_file_splitter_8cs_source.html#l00085">85</a> of file <a class="el" href="_file_splitter_8cs_source.html">FileSplitter.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_file_splitter_8cs.html">FileSplitter.cs</a></li>
+<li>C:/Users/fido1/Source/repos/FileSharing/FileSharing/<a class="el" href="_file_splitter_8cs_source.html">FileSplitter.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getsplitfilelazy',['GetSplitFileLazy',['../class_file_sharing_1_1_file_splitter.html#abc052a1ac224ba327a6380ee0d108f98',1,'FileSharing::FileSplitter']]]
+  ['indexoffailure',['IndexOfFailure',['../class_file_sharing_1_1_upload_failed_exception.html#a3d23421eb17105a8a7bda2723565a02a',1,'FileSharing::UploadFailedException']]]
 ];

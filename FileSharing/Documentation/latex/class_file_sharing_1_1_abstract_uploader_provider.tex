@@ -10,19 +10,28 @@ Inheritance diagram for File\+Sharing.\+Abstract\+Uploader\+Provider\+:\begin{fi
 \begin{DoxyCompactItemize}
 \item 
 abstract I\+Enumerable$<$ string $>$ \hyperlink{class_file_sharing_1_1_abstract_uploader_provider_a951930bd16d0cfd061fa2dfd055e2601}{Upload} (I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$ inputs, int sleep\+Time\+Between\+Downloads\+MS=1000)
-\begin{DoxyCompactList}\small\item\em Uploads the byte arrays to the website \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Uploads the byte arrays to the website \end{DoxyCompactList}\item 
+abstract I\+Enumerable$<$ string $>$ \hyperlink{class_file_sharing_1_1_abstract_uploader_provider_a7f85a810557b4bd71443eb2008547647}{Upload} (I\+Enumerable$<$ string $>$ Files, int sleep\+Time\+Between\+Downloads\+MS=1000)
+\begin{DoxyCompactList}\small\item\em Uploads the files inputted to files enumerable \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-abstract int \hyperlink{class_file_sharing_1_1_abstract_uploader_provider_a5a62c7ab639093a3c4d7ea80c5b8a826}{Max\+Chunk\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+abstract long \hyperlink{class_file_sharing_1_1_abstract_uploader_provider_abb54ae14105fa9e2d8e68ae474bd74cf}{Max\+Chunk\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Abstract\+Uploader\+Provider.\+cs.
+
 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_file_sharing_1_1_abstract_uploader_provider_a951930bd16d0cfd061fa2dfd055e2601}\label{class_file_sharing_1_1_abstract_uploader_provider_a951930bd16d0cfd061fa2dfd055e2601}} 
 \index{File\+Sharing\+::\+Abstract\+Uploader\+Provider@{File\+Sharing\+::\+Abstract\+Uploader\+Provider}!Upload@{Upload}}
 \index{Upload@{Upload}!File\+Sharing\+::\+Abstract\+Uploader\+Provider@{File\+Sharing\+::\+Abstract\+Uploader\+Provider}}
-\subsubsection{\texorpdfstring{Upload()}{Upload()}}
+\subsubsection{\texorpdfstring{Upload()}{Upload()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily abstract I\+Enumerable$<$string$>$ File\+Sharing.\+Abstract\+Uploader\+Provider.\+Upload (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$}]{inputs,  }\item[{int}]{sleep\+Time\+Between\+Downloads\+MS = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
@@ -36,21 +45,59 @@ Uploads the byte arrays to the website
 {\em sleep\+Time\+Between\+Downloads\+MS} & The amount of time the method should sleep the thread after each download in milliseconds. Default 1000\+Ms\\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_file_sharing_1_1_file_splitter_a25696a2fad3740fa24f79fd194da6ec3}{File\+Splitter.\+Split\+File(string, int)}
+
+
+\end{DoxySeeAlso}
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider_a991a7eebd1a55bc38e0b760a0f824928}{File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Uploader\+Provider}.
+Implemented in \hyperlink{class_file_sharing_1_1_file_i_o_1_1_file_i_o_uploader_provider_adf0c3382f1c092923de4b2ee6a039923}{File\+Sharing.\+File\+I\+O.\+File\+I\+O\+Uploader\+Provider}.
+
+\mbox{\Hypertarget{class_file_sharing_1_1_abstract_uploader_provider_a7f85a810557b4bd71443eb2008547647}\label{class_file_sharing_1_1_abstract_uploader_provider_a7f85a810557b4bd71443eb2008547647}} 
+\index{File\+Sharing\+::\+Abstract\+Uploader\+Provider@{File\+Sharing\+::\+Abstract\+Uploader\+Provider}!Upload@{Upload}}
+\index{Upload@{Upload}!File\+Sharing\+::\+Abstract\+Uploader\+Provider@{File\+Sharing\+::\+Abstract\+Uploader\+Provider}}
+\subsubsection{\texorpdfstring{Upload()}{Upload()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily abstract I\+Enumerable$<$string$>$ File\+Sharing.\+Abstract\+Uploader\+Provider.\+Upload (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ string $>$}]{Files,  }\item[{int}]{sleep\+Time\+Between\+Downloads\+MS = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Uploads the files inputted to files enumerable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Files} & an enumerable to all the paths for the files\\
+\hline
+{\em sleep\+Time\+Between\+Downloads\+MS} & The amount of time the method should sleep the thread after each download in milliseconds. Default 1000\+Ms\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_file_sharing_1_1_file_splitter_a25696a2fad3740fa24f79fd194da6ec3}{File\+Splitter.\+Split\+File}
+
+
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{class_file_sharing_1_1_file_i_o_1_1_file_i_o_uploader_provider_ab60ebd0e31c88f5d365249d59f81e9fd}{File\+Sharing.\+File\+I\+O.\+File\+I\+O\+Uploader\+Provider}.
 
 
 
 \subsection{Property Documentation}
-\mbox{\Hypertarget{class_file_sharing_1_1_abstract_uploader_provider_a5a62c7ab639093a3c4d7ea80c5b8a826}\label{class_file_sharing_1_1_abstract_uploader_provider_a5a62c7ab639093a3c4d7ea80c5b8a826}} 
+\mbox{\Hypertarget{class_file_sharing_1_1_abstract_uploader_provider_abb54ae14105fa9e2d8e68ae474bd74cf}\label{class_file_sharing_1_1_abstract_uploader_provider_abb54ae14105fa9e2d8e68ae474bd74cf}} 
 \index{File\+Sharing\+::\+Abstract\+Uploader\+Provider@{File\+Sharing\+::\+Abstract\+Uploader\+Provider}!Max\+Chunk\+Size@{Max\+Chunk\+Size}}
 \index{Max\+Chunk\+Size@{Max\+Chunk\+Size}!File\+Sharing\+::\+Abstract\+Uploader\+Provider@{File\+Sharing\+::\+Abstract\+Uploader\+Provider}}
 \subsubsection{\texorpdfstring{Max\+Chunk\+Size}{MaxChunkSize}}
-{\footnotesize\ttfamily abstract int File\+Sharing.\+Abstract\+Uploader\+Provider.\+Max\+Chunk\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+{\footnotesize\ttfamily abstract long File\+Sharing.\+Abstract\+Uploader\+Provider.\+Max\+Chunk\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Definition at line 12 of file Abstract\+Uploader\+Provider.\+cs.
 
 
 

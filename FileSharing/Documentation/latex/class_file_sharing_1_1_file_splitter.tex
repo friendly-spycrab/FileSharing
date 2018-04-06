@@ -3,16 +3,25 @@
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$ \hyperlink{class_file_sharing_1_1_file_splitter_abc052a1ac224ba327a6380ee0d108f98}{Get\+Split\+File\+Lazy} (string file\+Path, int chunk\+Size)
-\begin{DoxyCompactList}\small\item\em Splits the file lazily and returns an enumerable that contains the file split into byte arrays \end{DoxyCompactList}\end{DoxyCompactItemize}
+static I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$ \hyperlink{class_file_sharing_1_1_file_splitter_a25696a2fad3740fa24f79fd194da6ec3}{Split\+File} (string file\+Path, int chunk\+Size)
+\begin{DoxyCompactList}\small\item\em Splits the file lazily and returns an enumerable that contains the file split into byte arrays \end{DoxyCompactList}\item 
+static I\+Enumerable$<$ string $>$ \hyperlink{class_file_sharing_1_1_file_splitter_aa0f7dc920db0a5bd0f7ae992298d1198}{Split\+File} (string file\+Path, long chunk\+Size, Directory\+Info split\+Files\+Directory=null, string split\+Files\+Name=\char`\"{}Part\char`\"{}, bool is\+Path\+Absoloute=false)
+\begin{DoxyCompactList}\small\item\em Splits the file lazily into multiple subfiles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file File\+Splitter.\+cs.
+
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_file_sharing_1_1_file_splitter_abc052a1ac224ba327a6380ee0d108f98}\label{class_file_sharing_1_1_file_splitter_abc052a1ac224ba327a6380ee0d108f98}} 
-\index{File\+Sharing\+::\+File\+Splitter@{File\+Sharing\+::\+File\+Splitter}!Get\+Split\+File\+Lazy@{Get\+Split\+File\+Lazy}}
-\index{Get\+Split\+File\+Lazy@{Get\+Split\+File\+Lazy}!File\+Sharing\+::\+File\+Splitter@{File\+Sharing\+::\+File\+Splitter}}
-\subsubsection{\texorpdfstring{Get\+Split\+File\+Lazy()}{GetSplitFileLazy()}}
-{\footnotesize\ttfamily static I\+Enumerable$<$byte\mbox{[}$\,$\mbox{]}$>$ File\+Sharing.\+File\+Splitter.\+Get\+Split\+File\+Lazy (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{int}]{chunk\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{class_file_sharing_1_1_file_splitter_a25696a2fad3740fa24f79fd194da6ec3}\label{class_file_sharing_1_1_file_splitter_a25696a2fad3740fa24f79fd194da6ec3}} 
+\index{File\+Sharing\+::\+File\+Splitter@{File\+Sharing\+::\+File\+Splitter}!Split\+File@{Split\+File}}
+\index{Split\+File@{Split\+File}!File\+Sharing\+::\+File\+Splitter@{File\+Sharing\+::\+File\+Splitter}}
+\subsubsection{\texorpdfstring{Split\+File()}{SplitFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static I\+Enumerable$<$byte\mbox{[}$\,$\mbox{]}$>$ File\+Sharing.\+File\+Splitter.\+Split\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{int}]{chunk\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -27,8 +36,68 @@ Splits the file lazily and returns an enumerable that contains the file split in
 \end{DoxyParams}
 
 
-\begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000002}{Todo}]implement support for larger than 2\+GB files. \end{DoxyRefDesc}
+This method stores the entire split file in memory. Use \hyperlink{class_file_sharing_1_1_file_splitter_aa0f7dc920db0a5bd0f7ae992298d1198}{Split\+File(string, long, Directory\+Info, string, bool)} if you want to work on files bigger than 2\+GB on 32bit systems. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Out\+Of\+Memory\+Exception} & If the file is over whats allowed by the max\\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 23 of file File\+Splitter.\+cs.
+
+\mbox{\Hypertarget{class_file_sharing_1_1_file_splitter_aa0f7dc920db0a5bd0f7ae992298d1198}\label{class_file_sharing_1_1_file_splitter_aa0f7dc920db0a5bd0f7ae992298d1198}} 
+\index{File\+Sharing\+::\+File\+Splitter@{File\+Sharing\+::\+File\+Splitter}!Split\+File@{Split\+File}}
+\index{Split\+File@{Split\+File}!File\+Sharing\+::\+File\+Splitter@{File\+Sharing\+::\+File\+Splitter}}
+\subsubsection{\texorpdfstring{Split\+File()}{SplitFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static I\+Enumerable$<$string$>$ File\+Sharing.\+File\+Splitter.\+Split\+File (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{long}]{chunk\+Size,  }\item[{Directory\+Info}]{split\+Files\+Directory = {\ttfamily null},  }\item[{string}]{split\+Files\+Name = {\ttfamily \char`\"{}Part\char`\"{}},  }\item[{bool}]{is\+Path\+Absoloute = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Splits the file lazily into multiple subfiles. 
+
+This requires that you have permission to write on the system. If you only need the bytes and your file is smaller than whats allowed by the clr use \hyperlink{class_file_sharing_1_1_file_splitter_a25696a2fad3740fa24f79fd194da6ec3}{Split\+File(string, int)} instead 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path to the file.\\
+\hline
+{\em chunk\+Size} & the size of the chunks to split the files into\\
+\hline
+{\em split\+Files\+Directory} & the folder where to store the files. if the folder does not exist, then it will created. Default is the current directory\\
+\hline
+{\em split\+Files\+Name} & the name of the splitfiles. For example if split\+Files\+Name = \char`\"{}\+Part\char`\"{} then the files will be named \char`\"{}\+Part1.\+split\char`\"{},\char`\"{}\+Part2.\+split\char`\"{} and so on\\
+\hline
+{\em is\+Path\+Absoloute} & Whether the returned paths to the files are absoloute or relative to the split\+Files\+Directory\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An enumerable of all the paths to the split files.
+\end{DoxyReturn}
+
+
+This example shows how to use this method 
+\begin{DoxyCode}
+\textcolor{comment}{//Splits the test.jpg into 50kb chunks and outputs them into the current directory}
+var files = \hyperlink{class_file_sharing_1_1_file_splitter_a25696a2fad3740fa24f79fd194da6ec3}{SplitFile}(\textcolor{stringliteral}{"Test.jpg"}, 1024 * 50);
+\textcolor{keywordflow}{foreach} (var item \textcolor{keywordflow}{in} files)
+    Console.WriteLine(item);
+\textcolor{comment}{/* Prints}
+\textcolor{comment}{ * Path}
+\textcolor{comment}{ * Part1.split}
+\textcolor{comment}{ * Part2.split}
+\textcolor{comment}{ * Part3.split}
+\textcolor{comment}{ * And so on}
+\textcolor{comment}{ */}
+\end{DoxyCode}
+ 
+
+Definition at line 85 of file File\+Splitter.\+cs.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
