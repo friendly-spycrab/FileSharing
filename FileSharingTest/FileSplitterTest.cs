@@ -84,7 +84,7 @@ namespace FileSharingTest
         {
             IEnumerable<string> splitFile = FileSplitter.SplitFile("testhuge.zip", 1024 * 1024 * 1024, new DirectoryInfo("TestHugeParts"), isPathAbsoloute: true).ToList();
 
-            // Todo: use an md5 hash instead and then precompute the result
+            // Todo: use an md5 hash instead and then precompute testhuge.zip
             // Comparing for length. because actually comparing 2.6GB of data takes too long
             bool sameLength = new FileInfo("testhuge.zip").Length == splitFile.Select(x => new FileInfo(x)).Sum(x => x.Length);
 

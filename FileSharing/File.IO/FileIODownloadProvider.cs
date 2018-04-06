@@ -24,7 +24,7 @@ namespace FileSharing.FileIO
         /// //Upload the test.jpg after splitting it up in 50kb chunks
         /// var links = uploaderProvider.Upload(FileSplitter.SplitFileBytes("test.jpg", 51200)).ToList();
         /// 
-        /// //dwonload the test.jpg
+        /// //download the test.jpg
         /// var splitfile = new FileIODownloadProvider().Download(links);
         ///
         /// </code>
@@ -45,6 +45,12 @@ namespace FileSharing.FileIO
             }
         }
 
+        /// <summary>
+        /// Todo: implement downloading files larger than 2GB
+        /// </summary>
+        /// <param name="downloadLinks"></param>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
         public override IEnumerable<string> Download(IEnumerable<string> downloadLinks, string filePath)
         {
             throw new NotImplementedException();

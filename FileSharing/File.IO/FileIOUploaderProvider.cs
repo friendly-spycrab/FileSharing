@@ -36,7 +36,6 @@ namespace FileSharing.FileIO
         /// <returns>Returns the responses for the uploads. To get the download link Use the <see cref="FileIOJson.FromJson(string)"/> to get a class that has that property</returns>
         /// <remarks>
         /// The method waits 1s after uploading a file. this is so there is a smaller chance of the server returning success:false.
-        /// Todo: implement a version that uses streams instead of byte[]
         /// </remarks>
         /// <example>
         /// This example shows how to upload the files and then download them again
