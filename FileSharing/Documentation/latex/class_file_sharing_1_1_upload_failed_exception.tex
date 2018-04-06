@@ -1,0 +1,178 @@
+\hypertarget{class_file_sharing_1_1_upload_failed_exception}{}\section{File\+Sharing.\+Upload\+Failed\+Exception Class Reference}
+\label{class_file_sharing_1_1_upload_failed_exception}\index{File\+Sharing.\+Upload\+Failed\+Exception@{File\+Sharing.\+Upload\+Failed\+Exception}}
+
+
+This exception is thrown when an upload fails.  
+
+
+Inheritance diagram for File\+Sharing.\+Upload\+Failed\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_sharing_1_1_upload_failed_exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_file_sharing_1_1_upload_failed_exception_a695f2b76a11171b4ac7b749eeeb8f09b}{Upload\+Failed\+Exception} ()
+\item 
+\hyperlink{class_file_sharing_1_1_upload_failed_exception_a70ad5d0f760b1961b322dababb1a105b}{Upload\+Failed\+Exception} (int index\+Of\+Failure, I\+Enumerable$<$ Byte\mbox{[}$\,$\mbox{]}$>$ unsuccessful\+Uploads, I\+Enumerable$<$ string $>$ successful\+Downloads)
+\item 
+\hyperlink{class_file_sharing_1_1_upload_failed_exception_a9100bff30f30fc075d688f652b69c70e}{Upload\+Failed\+Exception} (string message)
+\item 
+\hyperlink{class_file_sharing_1_1_upload_failed_exception_aae92894e90378d6f003a25c218285a22}{Upload\+Failed\+Exception} (string message, int index\+Of\+Failure, I\+Enumerable$<$ Byte\mbox{[}$\,$\mbox{]}$>$ unsuccessful\+Uploads, I\+Enumerable$<$ string $>$ successful\+Downloads)
+\item 
+\hyperlink{class_file_sharing_1_1_upload_failed_exception_ad121124c4e8c37f2b1f686715e903450}{Upload\+Failed\+Exception} (string message, Exception inner\+Exception)
+\item 
+\hyperlink{class_file_sharing_1_1_upload_failed_exception_a1366a7120744fb9caa67e16e85f2c681}{Upload\+Failed\+Exception} (string message, Exception inner\+Exception, int index\+Of\+Failure, I\+Enumerable$<$ Byte\mbox{[}$\,$\mbox{]}$>$ unsuccessful\+Uploads, I\+Enumerable$<$ string $>$ successful\+Downloads)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_file_sharing_1_1_upload_failed_exception_af7a1ae41c23fd2ed6d955000f452ecdd}{Upload\+Failed\+Exception} (System.\+Runtime.\+Serialization.\+Serialization\+Info info, System.\+Runtime.\+Serialization.\+Streaming\+Context context)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_file_sharing_1_1_upload_failed_exception_a3d23421eb17105a8a7bda2723565a02a}{Index\+Of\+Failure}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The index in the enumerable where the upload failure happened \end{DoxyCompactList}\item 
+I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$ \hyperlink{class_file_sharing_1_1_upload_failed_exception_a8317cfafa75e732f435c85c50927ce79}{Unsuccessful\+Uploads}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The uploads that did not succeed. This includes the item where the exception failed \end{DoxyCompactList}\item 
+I\+Enumerable$<$ string $>$ \hyperlink{class_file_sharing_1_1_upload_failed_exception_a95a4b29d6b42b184e5c66659e3873e71}{Successful\+Downloads}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The downloads that were successful \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This exception is thrown when an upload fails. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_a695f2b76a11171b4ac7b749eeeb8f09b}\label{class_file_sharing_1_1_upload_failed_exception_a695f2b76a11171b4ac7b749eeeb8f09b}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Upload\+Failed\+Exception@{Upload\+Failed\+Exception}}
+\index{Upload\+Failed\+Exception@{Upload\+Failed\+Exception}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Upload\+Failed\+Exception()}{UploadFailedException()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily File\+Sharing.\+Upload\+Failed\+Exception.\+Upload\+Failed\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_a70ad5d0f760b1961b322dababb1a105b}\label{class_file_sharing_1_1_upload_failed_exception_a70ad5d0f760b1961b322dababb1a105b}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Upload\+Failed\+Exception@{Upload\+Failed\+Exception}}
+\index{Upload\+Failed\+Exception@{Upload\+Failed\+Exception}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Upload\+Failed\+Exception()}{UploadFailedException()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily File\+Sharing.\+Upload\+Failed\+Exception.\+Upload\+Failed\+Exception (\begin{DoxyParamCaption}\item[{int}]{index\+Of\+Failure,  }\item[{I\+Enumerable$<$ Byte\mbox{[}$\,$\mbox{]}$>$}]{unsuccessful\+Uploads,  }\item[{I\+Enumerable$<$ string $>$}]{successful\+Downloads }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_a9100bff30f30fc075d688f652b69c70e}\label{class_file_sharing_1_1_upload_failed_exception_a9100bff30f30fc075d688f652b69c70e}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Upload\+Failed\+Exception@{Upload\+Failed\+Exception}}
+\index{Upload\+Failed\+Exception@{Upload\+Failed\+Exception}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Upload\+Failed\+Exception()}{UploadFailedException()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily File\+Sharing.\+Upload\+Failed\+Exception.\+Upload\+Failed\+Exception (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_aae92894e90378d6f003a25c218285a22}\label{class_file_sharing_1_1_upload_failed_exception_aae92894e90378d6f003a25c218285a22}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Upload\+Failed\+Exception@{Upload\+Failed\+Exception}}
+\index{Upload\+Failed\+Exception@{Upload\+Failed\+Exception}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Upload\+Failed\+Exception()}{UploadFailedException()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily File\+Sharing.\+Upload\+Failed\+Exception.\+Upload\+Failed\+Exception (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{int}]{index\+Of\+Failure,  }\item[{I\+Enumerable$<$ Byte\mbox{[}$\,$\mbox{]}$>$}]{unsuccessful\+Uploads,  }\item[{I\+Enumerable$<$ string $>$}]{successful\+Downloads }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_ad121124c4e8c37f2b1f686715e903450}\label{class_file_sharing_1_1_upload_failed_exception_ad121124c4e8c37f2b1f686715e903450}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Upload\+Failed\+Exception@{Upload\+Failed\+Exception}}
+\index{Upload\+Failed\+Exception@{Upload\+Failed\+Exception}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Upload\+Failed\+Exception()}{UploadFailedException()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily File\+Sharing.\+Upload\+Failed\+Exception.\+Upload\+Failed\+Exception (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{Exception}]{inner\+Exception }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_a1366a7120744fb9caa67e16e85f2c681}\label{class_file_sharing_1_1_upload_failed_exception_a1366a7120744fb9caa67e16e85f2c681}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Upload\+Failed\+Exception@{Upload\+Failed\+Exception}}
+\index{Upload\+Failed\+Exception@{Upload\+Failed\+Exception}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Upload\+Failed\+Exception()}{UploadFailedException()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily File\+Sharing.\+Upload\+Failed\+Exception.\+Upload\+Failed\+Exception (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{Exception}]{inner\+Exception,  }\item[{int}]{index\+Of\+Failure,  }\item[{I\+Enumerable$<$ Byte\mbox{[}$\,$\mbox{]}$>$}]{unsuccessful\+Uploads,  }\item[{I\+Enumerable$<$ string $>$}]{successful\+Downloads }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_af7a1ae41c23fd2ed6d955000f452ecdd}\label{class_file_sharing_1_1_upload_failed_exception_af7a1ae41c23fd2ed6d955000f452ecdd}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Upload\+Failed\+Exception@{Upload\+Failed\+Exception}}
+\index{Upload\+Failed\+Exception@{Upload\+Failed\+Exception}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Upload\+Failed\+Exception()}{UploadFailedException()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily File\+Sharing.\+Upload\+Failed\+Exception.\+Upload\+Failed\+Exception (\begin{DoxyParamCaption}\item[{System.\+Runtime.\+Serialization.\+Serialization\+Info}]{info,  }\item[{System.\+Runtime.\+Serialization.\+Streaming\+Context}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_a3d23421eb17105a8a7bda2723565a02a}\label{class_file_sharing_1_1_upload_failed_exception_a3d23421eb17105a8a7bda2723565a02a}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Index\+Of\+Failure@{Index\+Of\+Failure}}
+\index{Index\+Of\+Failure@{Index\+Of\+Failure}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Index\+Of\+Failure}{IndexOfFailure}}
+{\footnotesize\ttfamily int File\+Sharing.\+Upload\+Failed\+Exception.\+Index\+Of\+Failure\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The index in the enumerable where the upload failure happened 
+
+
+\begin{DoxyCode}
+FileIOUploaderProvider uploaderProvider = \textcolor{keyword}{new} FileIOUploaderProvider();
+\textcolor{keywordflow}{try}
+\{
+    \textcolor{comment}{//Here we try to upload to File.IO}
+    uploaderProvider.Upload(\textcolor{keyword}{new} Byte[][]
+                            \{
+                            \textcolor{keyword}{new} byte[] \{1,1\}, \textcolor{comment}{//Index 0}
+                            \textcolor{keyword}{new} byte[] \{2,2\}, \textcolor{comment}{//Index 1}
+                            \textcolor{keyword}{new} byte[] \{3,3\}, \textcolor{comment}{//Index 2}
+                            \textcolor{keyword}{new} byte[] \{4,4\}, \textcolor{comment}{//Index 3}
+                            \textcolor{keyword}{new} byte[] \{5,5\}  \textcolor{comment}{//Index 4}
+                            \});
+
+    \textcolor{comment}{//But it fails at new byte[] \{3,3\},}
+\}
+\textcolor{keywordflow}{catch} (\hyperlink{class_file_sharing_1_1_upload_failed_exception_a695f2b76a11171b4ac7b749eeeb8f09b}{UploadFailedException} ex)
+\{
+    \textcolor{comment}{//This means UnsuccessfulUploads value will be }
+    \textcolor{comment}{//2}
+    var indexFailure = ex.IndexOfFailure);
+\}        
+\end{DoxyCode}
+ \mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_a95a4b29d6b42b184e5c66659e3873e71}\label{class_file_sharing_1_1_upload_failed_exception_a95a4b29d6b42b184e5c66659e3873e71}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Successful\+Downloads@{Successful\+Downloads}}
+\index{Successful\+Downloads@{Successful\+Downloads}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Successful\+Downloads}{SuccessfulDownloads}}
+{\footnotesize\ttfamily I\+Enumerable$<$string$>$ File\+Sharing.\+Upload\+Failed\+Exception.\+Successful\+Downloads\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The downloads that were successful 
+
+\mbox{\Hypertarget{class_file_sharing_1_1_upload_failed_exception_a8317cfafa75e732f435c85c50927ce79}\label{class_file_sharing_1_1_upload_failed_exception_a8317cfafa75e732f435c85c50927ce79}} 
+\index{File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}!Unsuccessful\+Uploads@{Unsuccessful\+Uploads}}
+\index{Unsuccessful\+Uploads@{Unsuccessful\+Uploads}!File\+Sharing\+::\+Upload\+Failed\+Exception@{File\+Sharing\+::\+Upload\+Failed\+Exception}}
+\subsubsection{\texorpdfstring{Unsuccessful\+Uploads}{UnsuccessfulUploads}}
+{\footnotesize\ttfamily I\+Enumerable$<$byte\mbox{[}$\,$\mbox{]}$>$ File\+Sharing.\+Upload\+Failed\+Exception.\+Unsuccessful\+Uploads\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The uploads that did not succeed. This includes the item where the exception failed 
+
+
+\begin{DoxyCode}
+FileIOUploaderProvider uploaderProvider = \textcolor{keyword}{new} FileIOUploaderProvider();
+\textcolor{keywordflow}{try}
+\{
+    \textcolor{comment}{//Here we try to upload to File.IO}
+    uploaderProvider.Upload(\textcolor{keyword}{new} Byte[][]
+                            \{
+                            \textcolor{keyword}{new} byte[] \{1,1\},
+                            \textcolor{keyword}{new} byte[] \{2,2\},
+                            \textcolor{keyword}{new} byte[] \{3,3\},
+                            \textcolor{keyword}{new} byte[] \{4,4\},
+                            \textcolor{keyword}{new} byte[] \{5,5\}
+                            \});
+
+    \textcolor{comment}{//But it fails at new byte[] \{3,3\},}
+\}
+\textcolor{keywordflow}{catch} (\hyperlink{class_file_sharing_1_1_upload_failed_exception_a695f2b76a11171b4ac7b749eeeb8f09b}{UploadFailedException} ex)
+\{
+    \textcolor{comment}{//This means UnsuccessfulUploads value will be }
+    \textcolor{comment}{//\{3,3\},\{4,4\},\{5,5\}}
+    var faileduploads = ex.UnsuccessfulUploads);
+\}        
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fido1/\+Source/repos/\+File\+Sharing/\+File\+Sharing/\hyperlink{_upload_failed_exception_8cs}{Upload\+Failed\+Exception.\+cs}\end{DoxyCompactItemize}

@@ -1,0 +1,69 @@
+\hypertarget{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider}{}\section{File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Download\+Provider Class Reference}
+\label{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider}\index{File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Download\+Provider@{File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Download\+Provider}}
+
+
+Provider for downloading Files from \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO}  
+
+
+Inheritance diagram for File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Download\+Provider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$ \hyperlink{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider_a20619028413c369ac0cc064b610d5c0e}{Download} (I\+Enumerable$<$ string $>$ download\+Links)
+\begin{DoxyCompactList}\small\item\em Downloads all the data specified in the \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} Json Responses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provider for downloading Files from \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider_a20619028413c369ac0cc064b610d5c0e}\label{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_download_provider_a20619028413c369ac0cc064b610d5c0e}} 
+\index{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Download\+Provider@{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Download\+Provider}!Download@{Download}}
+\index{Download@{Download}!File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Download\+Provider@{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Download\+Provider}}
+\subsubsection{\texorpdfstring{Download()}{Download()}}
+{\footnotesize\ttfamily override I\+Enumerable$<$byte\mbox{[}$\,$\mbox{]}$>$ File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Download\+Provider.\+Download (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ string $>$}]{download\+Links }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Downloads all the data specified in the \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} Json Responses. 
+
+This example shows how to download the files you just uploaded 
+\begin{DoxyCode}
+FileIOUploaderProvider uploaderProvider = \textcolor{keyword}{new} FileIOUploaderProvider();
+
+\textcolor{comment}{//Upload the test.jpg after splitting it up in 50kb chunks}
+var links = uploaderProvider.Upload(FileSplitter.GetSplitFileLazy(\textcolor{stringliteral}{"test.jpg"}, 51200)).ToList();
+
+\textcolor{comment}{//dwonload the test.jpg}
+var splitfile = \textcolor{keyword}{new} FileIODownloadProvider().Download(links);
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em download\+Links} & \\
+\hline
+\end{DoxyParams}
+
+
+The files are downloaded lazily 
+
+\begin{DoxyReturn}{Returns}
+An enumerable of all the downloads
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_file_sharing_1_1_abstract_downloader_provider_a38b11b25b2acda450d8406ca488585dd}{File\+Sharing.\+Abstract\+Downloader\+Provider}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fido1/\+Source/repos/\+File\+Sharing/\+File\+Sharing/\+File.\+I\+O/\hyperlink{_file_i_o_download_provider_8cs}{File\+I\+O\+Download\+Provider.\+cs}\end{DoxyCompactItemize}

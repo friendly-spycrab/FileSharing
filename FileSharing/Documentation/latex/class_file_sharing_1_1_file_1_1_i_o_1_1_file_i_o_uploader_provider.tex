@@ -1,0 +1,96 @@
+\hypertarget{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider}{}\section{File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Uploader\+Provider Class Reference}
+\label{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider}\index{File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Uploader\+Provider@{File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Uploader\+Provider}}
+
+
+Provides methods for uploading to File.\+io  
+
+
+Inheritance diagram for File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Uploader\+Provider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override I\+Enumerable$<$ string $>$ \hyperlink{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider_a991a7eebd1a55bc38e0b760a0f824928}{Upload} (I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$ inputs, int sleep\+Time\+Between\+Downloads\+MS=1000)
+\begin{DoxyCompactList}\small\item\em Uploads a the bytes to \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} and gives links back for the file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override int \hyperlink{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider_aece58c355e86215e63487ad62831f33c}{Max\+Chunk\+Size}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The max size of an upload for \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO}. Currently 1.\+99\+GB or (1024$\ast$1024$\ast$1024 -\/ 1) $\ast$ 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides methods for uploading to File.\+io 
+
+\hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} deletes files after 2 weeks in default. \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} links can only be used once after that the files is deleted 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider_a991a7eebd1a55bc38e0b760a0f824928}\label{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider_a991a7eebd1a55bc38e0b760a0f824928}} 
+\index{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider@{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider}!Upload@{Upload}}
+\index{Upload@{Upload}!File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider@{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider}}
+\subsubsection{\texorpdfstring{Upload()}{Upload()}}
+{\footnotesize\ttfamily override I\+Enumerable$<$string$>$ File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Uploader\+Provider.\+Upload (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ byte\mbox{[}$\,$\mbox{]}$>$}]{inputs,  }\item[{int}]{sleep\+Time\+Between\+Downloads\+MS = {\ttfamily 1000} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Uploads a the bytes to \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} and gives links back for the file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inputs} & Uploads all arrays and returns an enumerable with all the download links\\
+\hline
+{\em sleep\+Time\+Between\+Downloads\+MS} & The amount of time the method should sleep the thread after each download in milliseconds. Default 1000\+Ms. The default should be enough. Change this only if you have problems with uploading \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the responses for the uploads. To get the download link Use the \hyperlink{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_json_ad5388e800494f0bad65d91858bd8b246}{File\+I\+O\+Json.\+From\+Json(string)} to get a class that has that property
+\end{DoxyReturn}
+
+
+The method waits 1s after uploading a file. this is so there is a smaller chance of the server returning success\+:false 
+
+This example shows how to upload the files and then download them again 
+\begin{DoxyCode}
+FileIOUploaderProvider uploaderProvider = \textcolor{keyword}{new} FileIOUploaderProvider();
+
+\textcolor{comment}{//Upload the test.jpg after splitting it up in 50kb chunks}
+var links = uploaderProvider.Upload(FileSplitter.GetSplitFileLazy(\textcolor{stringliteral}{"test.jpg"}, 51200)).ToList();
+
+\textcolor{comment}{//download the test.jpg}
+var splitfile = \textcolor{keyword}{new} FileIODownloadProvider().Download(links);
+\end{DoxyCode}
+ 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_file_sharing_1_1_upload_failed_exception}{Upload\+Failed\+Exception}} & Throws \hyperlink{class_file_sharing_1_1_upload_failed_exception}{Upload\+Failed\+Exception} if an upload is unsuccesful \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_file_sharing_1_1_abstract_uploader_provider_a951930bd16d0cfd061fa2dfd055e2601}{File\+Sharing.\+Abstract\+Uploader\+Provider}.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider_aece58c355e86215e63487ad62831f33c}\label{class_file_sharing_1_1_file_1_1_i_o_1_1_file_i_o_uploader_provider_aece58c355e86215e63487ad62831f33c}} 
+\index{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider@{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider}!Max\+Chunk\+Size@{Max\+Chunk\+Size}}
+\index{Max\+Chunk\+Size@{Max\+Chunk\+Size}!File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider@{File\+Sharing\+::\+File\+::\+I\+O\+::\+File\+I\+O\+Uploader\+Provider}}
+\subsubsection{\texorpdfstring{Max\+Chunk\+Size}{MaxChunkSize}}
+{\footnotesize\ttfamily override int File\+Sharing.\+File.\+I\+O.\+File\+I\+O\+Uploader\+Provider.\+Max\+Chunk\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+The max size of an upload for \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO}. Currently 1.\+99\+GB or (1024$\ast$1024$\ast$1024 -\/ 1) $\ast$ 2. 
+
+Even though the actual max file size of a \hyperlink{namespace_file_sharing_1_1_file_1_1_i_o}{File.\+IO} upload is 5\+GB. because of the fact that C\# streams only takes an integer for offsets and lengths \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Implement support for larger than 2\+GB chunks \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/fido1/\+Source/repos/\+File\+Sharing/\+File\+Sharing/\+File.\+I\+O/\hyperlink{_file_i_o_uploader_provider_8cs}{File\+I\+O\+Uploader\+Provider.\+cs}\end{DoxyCompactItemize}
