@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -29,7 +30,7 @@ namespace FileSharing.FileIO
         ///
         /// </code>
         /// </example>
-        /// <param name="downloadLinks"></param>
+        /// <param name="downloadLinks">Takes strings built like this {"success":true,"key":"2ojE41","link":"https://file.io/2ojE41","expiry":"14 days"}</param>
         /// <remarks>
         /// The files are downloaded lazily
         /// </remarks>
@@ -46,14 +47,27 @@ namespace FileSharing.FileIO
         }
 
         /// <summary>
-        /// Todo: implement downloading files larger than 2GB
+        /// Downloads all the files listed in the downloadLinks param.
         /// </summary>
-        /// <param name="downloadLinks"></param>
+        /// <param name="downloadLinks">Takes strings built like a File.IO response e.g this {"success":true,"key":"2ojE41","link":"https://file.io/2ojE41","expiry":"14 days"}</param>
         /// <param name="filePath"></param>
-        /// <returns></returns>
-        public override IEnumerable<string> Download(IEnumerable<string> downloadLinks, string filePath)
+        /// <remarks>
+        /// The files are downloaded lazily
+        /// </remarks>
+        /// <returns>An enumerable of all the absoloute paths to the downloads</returns>
+        public override IEnumerable<string> Download(IEnumerable<string> downloadLinks, DirectoryInfo filePath = null)
         {
-            throw new NotImplementedException();
+            filePath = filePath ?? new DirectoryInfo(Directory.GetCurrentDirectory());
+            using (WebClient client = new WebClient())
+            {
+                int index = 0;
+                foreach (var item in downloadLinks)
+                {
+                    index++;
+                    client.DownloadFile(FileIOJson.FromJson(item).Link, Path.Combine(filePath.FullName,$"Part{index}.split")); 
+                    yield return Path.Combine(filePath.FullName, $"Part{index}.split");
+                }
+            }
         }
     }
 }
